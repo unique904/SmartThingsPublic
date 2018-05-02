@@ -1,4 +1,5 @@
 /**
+*version 0.3 - bug fix arm away fixed
 *Version 0.2 - Added guide to use on settings page  
 *Version 0.1 - First version arms/home/disarm the alarm
 */
@@ -22,9 +23,9 @@ capability "lock"
 tiles {
 	standardTile("toggle", "device.status", width: 2, height: 2) {
 		state("unknown", label:'${name}', action:"device.refresh", icon:"st.Office.office9", backgroundColor:"#ffa81e")
-		state("Armed Stay", label:'${name}', action:"switch.off", icon:"st.Home.home4", backgroundColor:"#79b821", nextState:"Disarmed")
-		state("Disarmed", label:'${name}', action:"switch.on", icon:"st.Home.home2", backgroundColor:"#a8a8a8")//, nextState:"Armed Away")
-		state("Armed Away", label:'${name}', action:"switch.off", icon:"st.Home.home3", backgroundColor:"#79b821", nextState:"Disarmed")
+		state("Armed Stay", label:'${name}', action:"lock", icon:"st.Home.home4", backgroundColor:"#79b821", nextState:"Disarmed")
+		state("Disarmed", label:'${name}', action:"switch.off", icon:"st.Home.home2", backgroundColor:"#a8a8a8")//, nextState:"Armed Away")
+		state("Armed Away", label:'${name}', action:"switch on", icon:"st.Home.home3", backgroundColor:"#79b821", nextState:"Disarmed")
         state("Arming", label:'${name}', icon:"st.Home.home4", backgroundColor:"#ffa81e")
 		state("Disarming", label:'${name}', icon:"st.Home.home2", backgroundColor:"#ffa81e")
      	}
